@@ -77,6 +77,11 @@ public class Heap {
         return tip;
     }
 
+    void decreaseKey(int newVal) {
+        array[0] = newVal;
+        heapifyDown(0);
+    }
+
     public static void main(String[] args) {
         Heap maxHeap = new Heap();
 
@@ -88,6 +93,7 @@ public class Heap {
         maxHeap.insert(24);
         maxHeap.insert(-4);
         maxHeap.insert(23);
+        maxHeap.decreaseKey(-8);
 
         int size = maxHeap.size;
         for (int i = 0; i < size; i++) System.out.print(maxHeap.extractMax() + " ");
